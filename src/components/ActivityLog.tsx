@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 
 const activities = [
-  { time: "14:32:01", event: "Perimeter scan initiated", level: "INFO" },
-  { time: "14:31:48", event: "Auth token refreshed [NODE-7]", level: "INFO" },
-  { time: "14:31:22", event: "Anomaly flagged — sector 7-G", level: "WARN" },
-  { time: "14:30:55", event: "Backup sequence completed", level: "OK" },
-  { time: "14:30:11", event: "Thermal spike detected", level: "WARN" },
-  { time: "14:29:44", event: "Drone sync — 12 units online", level: "INFO" },
+  { time: "14:32:01", event: "Payment received — GlobalTech ($25,000)", level: "OK" },
+  { time: "14:31:48", event: "Dunning email sent — Acme Corp (3rd notice)", level: "WARN" },
+  { time: "14:31:22", event: "INV-4038 generated — Vertex Labs ($12,800)", level: "INFO" },
+  { time: "14:30:55", event: "Credit check completed — NewCo (APPROVED)", level: "OK" },
+  { time: "14:30:11", event: "INV-3756 escalated to collections", level: "WARN" },
+  { time: "14:29:44", event: "Dispute opened — Orion LLC (INV-3990)", level: "WARN" },
+  { time: "14:29:02", event: "Payment plan created — Sterling Media", level: "INFO" },
+  { time: "14:28:33", event: "Wire confirmed — Pinnacle Group ($67,500)", level: "OK" },
 ];
 
 const levelColor = {
@@ -18,7 +20,7 @@ const levelColor = {
 export function ActivityLog() {
   return (
     <div className="rounded-lg bg-card/40 backdrop-blur-sm glow-border p-5 h-full">
-      <h2 className="font-mono text-xs tracking-widest text-muted-foreground mb-4">ACTIVITY LOG</h2>
+      <h2 className="font-mono text-xs tracking-widest text-muted-foreground mb-4">TRANSACTION LOG</h2>
       <div className="space-y-2 font-mono text-xs">
         {activities.map((a, i) => (
           <motion.div

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Hexagon, Radio, Wifi } from "lucide-react";
+import { Hexagon, Radio, Wifi, DollarSign } from "lucide-react";
 
 export function HudHeader() {
   return (
@@ -20,22 +20,26 @@ export function HudHeader() {
           </motion.div>
           <div>
             <h1 className="font-display text-2xl md:text-3xl font-bold text-foreground tracking-tight">
-              AR NOTIFICATION HUB
+              ACCOUNTS RECEIVABLE HUB
             </h1>
             <p className="font-mono text-xs text-muted-foreground tracking-widest mt-1">
-              COMMAND CENTER v4.2 — SECTOR 12
+              COLLECTIONS CENTER v2.1 — FISCAL Q4
             </p>
           </div>
         </div>
 
         <div className="flex items-center gap-4 font-mono text-xs text-muted-foreground">
           <span className="flex items-center gap-2">
+            <DollarSign className="w-4 h-4 text-success" />
+            <span className="text-success">$847,320 COLLECTED MTD</span>
+          </span>
+          <span className="flex items-center gap-2">
             <Wifi className="w-4 h-4 text-success" />
-            <span className="text-success">ONLINE</span>
+            <span className="text-success">SYNCED</span>
           </span>
           <span className="flex items-center gap-2">
             <Radio className="w-4 h-4 text-primary animate-pulse-glow" />
-            <span>SCANNING</span>
+            <span>MONITORING</span>
           </span>
         </div>
       </div>

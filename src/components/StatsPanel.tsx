@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { Activity, Bell, Shield, Zap } from "lucide-react";
+import { FileText, AlertTriangle, Clock, CheckCircle } from "lucide-react";
 
 const stats = [
-  { label: "ACTIVE", value: "147", icon: Activity, type: "primary" as const },
-  { label: "CRITICAL", value: "3", icon: Shield, type: "destructive" as const },
-  { label: "PENDING", value: "28", icon: Bell, type: "accent" as const },
-  { label: "RESOLVED", value: "1,204", icon: Zap, type: "success" as const },
+  { label: "OUTSTANDING", value: "$1.24M", subtitle: "142 invoices", icon: FileText, type: "primary" as const },
+  { label: "PAST DUE 90+", value: "$187K", subtitle: "12 accounts", icon: AlertTriangle, type: "destructive" as const },
+  { label: "PENDING", value: "$342K", subtitle: "38 invoices", icon: Clock, type: "accent" as const },
+  { label: "COLLECTED MTD", value: "$847K", subtitle: "96.2% rate", icon: CheckCircle, type: "success" as const },
 ];
 
 const typeStyles = {
@@ -31,6 +31,7 @@ export function StatsPanel() {
             <span className="font-mono text-xs tracking-widest text-muted-foreground">{stat.label}</span>
           </div>
           <p className="font-mono text-3xl font-bold">{stat.value}</p>
+          <p className="font-mono text-xs text-muted-foreground mt-1">{stat.subtitle}</p>
           {stat.type === "destructive" && (
             <div className="absolute top-2 right-2 w-2 h-2 rounded-full bg-destructive animate-pulse-glow" />
           )}
